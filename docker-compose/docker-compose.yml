@@ -41,10 +41,9 @@ services:
     links:
       - db:database
     environment:
-        ETHEREUM_JSONRPC_HTTP_URL: http://host.docker.internal:8545/
-        ETHEREUM_JSONRPC_TRACE_URL: http://host.docker.internal:8545/
-        ETHEREUM_JSONRPC_WS_URL: ws://host.docker.internal:8545/
-        CHAIN_ID: '1337'
+        ETHEREUM_JSONRPC_HTTP_URL: http://rpc-lb-fuji-blockscout.gunztoken.cc:9650/ext/bc/ryk9vkvNuKtewME2PeCgybo9sdWXGmCkBrrx4VPuZPdVdAak8/rpc
+        ETHEREUM_JSONRPC_TRACE_URL: http://rpc-lb-fuji-blockscout.gunztoken.cc:9650/ext/bc/ryk9vkvNuKtewME2PeCgybo9sdWXGmCkBrrx4VPuZPdVdAak8/rpc
+        CHAIN_ID: '49321'
 
   visualizer:
     extends:
