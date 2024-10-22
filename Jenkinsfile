@@ -188,7 +188,7 @@ pipeline {
                     echo "On stage: ${STAGE_NAME}"
                       
                     sh "env"                        
-                    sh "docker build  -t ${DOCKER_REGISTRY}/${SERVICE}:otg_dev -t ${DOCKER_REGISTRY}/${SERVICE}:${SHORT_COMMIT_HASH} docker/Dockerfile"
+                    sh "docker build  -t ${DOCKER_REGISTRY}/${SERVICE}:otg_dev -t ${DOCKER_REGISTRY}/${SERVICE}:${SHORT_COMMIT_HASH} -f docker/Dockerfile ."
                 }
             }
         }
