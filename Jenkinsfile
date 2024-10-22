@@ -194,9 +194,9 @@ pipeline {
         }
 
         stage('Docker Push otg_dev') {
-            when {
-                expression { return GITHUB_PR_MERGED == 'true' && GITHUB_REPO_NAME_DEV == SERVICE } // Run this stage only if triggered by githubPush
-            }
+            // when {
+            //     expression { return GITHUB_PR_MERGED == 'true' && GITHUB_REPO_NAME_DEV == SERVICE } // Run this stage only if triggered by githubPush
+            // }
             steps {
                 script {
                     echo "Pushing Docker image for tag: otg_dev"
