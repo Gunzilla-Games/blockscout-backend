@@ -193,20 +193,20 @@ pipeline {
             }
         }
 
-        // stage('Docker Push otg_dev') {
-        //     when {
-        //         expression { return GITHUB_PR_MERGED == 'true' && GITHUB_REPO_NAME_DEV == SERVICE } // Run this stage only if triggered by githubPush
-        //     }
-        //     steps {
-        //         script {
-        //             echo "Pushing Docker image for tag: otg_dev"
-        //             docker.withRegistry("https://${DOCKER_REGISTRY}", DOCKER_REGISTRY_CREDENTIAL) {
-        //                      sh "docker push ${DOCKER_REGISTRY}/${SERVICE}:${SHORT_COMMIT_HASH}"
-        //                      sh "docker push ${DOCKER_REGISTRY}/${SERVICE}:otg_dev"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Docker Push otg_dev') {
+            when {
+                expression { return GITHUB_PR_MERGED == 'true' && GITHUB_REPO_NAME_DEV == SERVICE } // Run this stage only if triggered by githubPush
+            }
+            steps {
+                script {
+                    echo "Pushing Docker image for tag: otg_dev"
+                    docker.withRegistry("https://${DOCKER_REGISTRY}", DOCKER_REGISTRY_CREDENTIAL) {
+                             sh "docker push ${DOCKER_REGISTRY}/${SERVICE}:${SHORT_COMMIT_HASH}"
+                             sh "docker push ${DOCKER_REGISTRY}/${SERVICE}:otg_dev"
+                    }
+                }
+            }
+        }
         
         // stage('ArgoCd app sync otg_dev') {
         //     when {
