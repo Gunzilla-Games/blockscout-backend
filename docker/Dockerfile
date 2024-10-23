@@ -4,7 +4,7 @@ WORKDIR /app
 
 ARG RELEASE_VERSION="6.8.1"
 ENV RELEASE_VERSION=${RELEASE_VERSION}
-
+ENV MIX_ENV="prod"
 RUN apk --no-cache --update add alpine-sdk gmp-dev automake libtool inotify-tools autoconf python3 file gcompat
 
 RUN set -ex && \
