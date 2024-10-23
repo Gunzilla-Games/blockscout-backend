@@ -103,7 +103,7 @@ pipeline {
         //             sh "env"                        
         //              if (GIT_TAG ==~ /^v\d+\.\d+\.\d+$/) {
         //                 // Build and tag the Docker image with both the GIT_TAG and latest
-        //                     sh "docker build --ssh default=/var/lib/jenkins/.ssh/id_ecdsa -t ${DOCKER_REGISTRY}/${SERVICE}:${GIT_TAG} -t ${DOCKER_REGISTRY}/${SERVICE}:latest ."
+        //                     sh "docker build --ssh default=/var/lib/jenkins/.ssh/id_ecdsa --build-arg RELEASE_VERSION=6.8.1 -t ${DOCKER_REGISTRY}/${SERVICE}:${GIT_TAG} -t ${DOCKER_REGISTRY}/${SERVICE}:latest ."
         //              } else {
         //                 // Build and tag the Docker image with the GIT_TAG only
         //                sh "docker build --ssh default=/var/lib/jenkins/.ssh/id_ecdsa -t ${DOCKER_REGISTRY}/${SERVICE}:${GIT_TAG} ."
