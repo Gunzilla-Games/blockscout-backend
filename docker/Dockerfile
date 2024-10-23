@@ -2,8 +2,8 @@ FROM hexpm/elixir:1.17.3-erlang-27.1-alpine-3.20.3 AS builder
 
 WORKDIR /app
 
-ARG RELEASE_VERSION=local
-ENV RELEASE_VERSION=${RELEASE_VERSION}
+
+ENV RELEASE_VERSION=6.8.1
 ENV MIX_ENV="prod"
 RUN apk --no-cache --update add alpine-sdk gmp-dev automake libtool inotify-tools autoconf python3 file gcompat
 
